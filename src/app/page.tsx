@@ -160,7 +160,7 @@ export default function Home() {
   return (
     <div className={styles.pageContainer}>
       <Hero />
-      <div className={styles.cardContainer}>
+      <div className={styles.cardContainer} id="cards-section">
         {cardData.map((card) => (
           <Card
             key={card.id}
