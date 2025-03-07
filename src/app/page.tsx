@@ -1,95 +1,80 @@
-import Image from "next/image";
+import Head from "next/head";
 import styles from "./page.module.css";
+import Card from "@/components/card";
+import Hero from "@/components/hero";
+
+interface CardData {
+  id: number;
+  image: string;
+  alt: string;
+  text: string;
+}
+
+const cardData: CardData[] = [
+  {
+    id: 1,
+    image: "/images/health.avif",
+    alt: "سلامتی",
+    text: "خدایا، برای سلامتی و تندرستی‌ام شکرگزارم.",
+  },
+  {
+    id: 2,
+    image: "/images/teamwork.jpg",
+    alt: "تیم کاری",
+    text: "خدایا، برای داشتن یک تیم کاری فوق‌العاده شکرگزارم.",
+  },
+  {
+    id: 3,
+    image: "/images/family.jpg",
+    alt: "خانواده",
+    text: "خدایا، برای خانواده مهربانم شکرگزارم.",
+  },
+  {
+    id: 4,
+    image: "/images/travel.jpg",
+    alt: "سفر",
+    text: "خدایا، برای فرصت‌های سفر شکرگزارم.",
+  },
+  {
+    id: 5,
+    image: "/images/success.jpg",
+    alt: "موفقیت",
+    text: "خدایا، برای موفقیت‌هایم شکرگزارم.",
+  },
+  {
+    id: 6,
+    image: "/images/nature.webp",
+    alt: "طبیعت",
+    text: "خدایا، برای زیبایی‌های طبیعت شکرگزارم.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
+    <>
+      <Head>
+        <title>کارت‌های شکرگزاری</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="یک مجموعه کارت شکرگزاری زیبا" />
+        {/* Importing a Persian-friendly Google Font */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Vazir&display=swap"
+          rel="stylesheet"
         />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+      </Head>
+      <div className={styles.pageContainer}>
+        <Hero />
+        <div className={styles.cardContainer}>
+          {cardData.map((card) => (
+            <Card
+              key={card.id}
+              image={card.image}
+              alt={card.alt}
+              text={card.text}
             />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+          ))}
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div>
+    </>
   );
 }
