@@ -1,0 +1,38 @@
+/* components/Card.module.css */
+.card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  /* A subtle white glow combined with a soft box-shadow */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.imageWrapper {
+  border-bottom: 1px solid #eee;
+}
+
+.imageWrapper img {
+  width: 300px !important;
+  height: 250px !important;
+}
+
+.cardContent {
+  padding: 15px;
+}
+
+.gradientText {
+  background: linear-gradient(45deg, #ff6b6b, #f8e473);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.2em;
+  margin: 10px 0;
+  font-family: "Vazir", sans-serif;
+}
