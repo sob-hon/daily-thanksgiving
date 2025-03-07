@@ -42,3 +42,22 @@ a {
     color-scheme: dark;
   }
 }
+
+@font-face {
+  font-family: "IranSans";
+  src: url("/fonts/IranSans.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "IranSans";
+  src: url("/fonts/IranSansBold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Apply to the entire project */
+body {
+  font-family: "IranSans", sans-serif;
+}

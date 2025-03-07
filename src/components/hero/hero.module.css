@@ -131,7 +131,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: -100px;
+  margin-top: -80px;
   gap: 2rem;
 }
 
@@ -165,6 +165,8 @@
   border-radius: 9999px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  font-family: "IranSans", sans-serif;
+  font-size: 13px;
 }
 
 .ctaButton:hover {
@@ -182,6 +184,7 @@
 .manImage {
   position: relative;
   width: 280px;
+  height: 250px;
   height: auto;
   z-index: 2; /* Ensure the man is above the circle */
 }

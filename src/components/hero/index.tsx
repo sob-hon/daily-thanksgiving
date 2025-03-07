@@ -87,7 +87,7 @@ const Hero: FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
           >
-            شکرگزاری، کلید آرامش و شادی در زندگی است
+            هر روز یه دلیل برای شکرگزاری!🌞
           </motion.h1>
 
           <motion.p
@@ -96,9 +96,7 @@ const Hero: FC = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 1 }}
           >
-            هر روز دلیلی برای سپاسگزاری وجود دارد. با تمرکز بر نعمت‌های کوچک،
-            شادی را به زندگی خود دعوت کنید. امروز را با دل شکرگزار آغاز کنید و
-            ببینید که چگونه دنیا به روی شما لبخند می‌زند.
+           زندگی پر از لحظه‌های قشنگه، فقط کافیه ببینیشون! بیا با هم هر روز یه چیز کوچیکو پیدا کنیم که ارزش شکرگزاری داره.
           </motion.p>
 
           <motion.button
@@ -118,7 +116,7 @@ const Hero: FC = () => {
             src="/images/grateful-man.png"
             alt="مردی در حال شکرگزاری"
             width={280}
-            height={450}
+            height={250}
             className={styles.manImage}
             priority
           />

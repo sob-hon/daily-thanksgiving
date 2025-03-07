@@ -36,9 +36,8 @@
   background: linear-gradient(45deg, #ff6b6b, #404cf4);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 1.2em;
+  font-size: 1em;
   margin: 10px 0;
-  font-family: "Vazir", sans-serif;
   text-align: right;
 }
 
