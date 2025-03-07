@@ -1,6 +1,7 @@
 import styles from "./hero.module.css";
+import { FC } from "react";
 
-const Hero: React.FC = () => {
+const Hero: FC = () => {
   return (
     <section className={styles.hero}>
       <h1 className={styles.heroTitle}>صبح و شب با شکرگزاری</h1>
