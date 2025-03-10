@@ -1,21 +1,4 @@
-/* styles/Home.module.css */
 .pageContainer {
   background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
   min-height: 100vh;
-}
-
-.cardContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .cardContainer {
-    flex-direction: column;
-    align-items: center;
-  }
 }
