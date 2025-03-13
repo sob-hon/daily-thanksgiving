@@ -157,7 +157,7 @@ const cardData: CardData[] = [
 
 const Cards = () => {
   return (
-    <div className={styles.cardContainer} id="cards-section">
+    <div className={styles.cards} id="cards-section">
       {cardData.map((card) => (
         <Card
           key={card.id}
