@@ -1,4 +1,16 @@
 .pageContainer {
-  background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
   min-height: 100vh;
+  background: linear-gradient(135deg, #f6f8ff 0%, #f1f5fe 100%);
+}
+
+.mainContent {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+  .mainContent {
+    padding: 0 1rem;
+  }
 }

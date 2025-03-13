@@ -1,15 +1,167 @@
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
+.section {
+  padding: 4rem 0;
 }
 
-/* Responsive adjustments */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 4rem 2rem;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.cardWrapper {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease forwards;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  position: relative;
+  background: white;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.1),
+    rgba(79, 70, 229, 0.1)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.cardWrapper:hover .card {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.cardWrapper:hover .card::before {
+  opacity: 1;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.cardWrapper:hover .image {
+  transform: scale(1.05);
+}
+
+.text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #4b5563;
+  margin-top: 1rem;
+  text-align: right;
+  direction: rtl;
+}
+
+.date {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-top: 1rem;
+  text-align: right;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.category {
+  font-size: 0.875rem;
+  color: #2563eb;
+  font-weight: 500;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  color: #2563eb;
+}
+
 @media (max-width: 768px) {
   .cards {
-    flex-direction: column;
-    align-items: center;
+    padding: 2rem 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
   }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .imageContainer {
+    height: 160px;
+  }
+}
+
+.emptyState {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #6b7280;
+}
+
+.emptyStateIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #2563eb;
+}
+
+.emptyStateText {
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+}
+
+.addButton {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.addButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
 }

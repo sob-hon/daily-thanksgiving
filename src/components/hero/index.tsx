@@ -1,67 +1,3 @@
-// "use client";
-// import { motion } from "framer-motion";
-// import styles from "./hero.module.css";
-
-// const Hero = () => {
-//   const scrollToCards = () => {
-//     const cardsSection = document.getElementById("cards-section");
-//     if (cardsSection) {
-//       cardsSection.scrollIntoView({ behavior: "smooth" });
-//     }
-//   };
-
-//   return (
-//     <section className={styles.section}>
-//       {/* Background overlay */}
-//       <div className={styles.background}></div>
-
-//       {/* Content container */}
-//       <div className={styles.content}>
-//         <motion.h1
-//           className={styles.title}
-//           initial={{ opacity: 0, y: -50 }}
-//           animate={{ opacity: 1, y: 0 }}
-//           transition={{ duration: 1 }}
-//         >
-//           هر روز سپاسگزار باش
-//         </motion.h1>
-//         <motion.p
-//           className={styles.subtitle}
-//           initial={{ opacity: 0 }}
-//           animate={{ opacity: 1 }}
-//           transition={{ delay: 0.5, duration: 1 }}
-//         >
-//           با قدردانی از کوچک‌ترین نعمت‌ها، هر روز را جشن بگیر
-//         </motion.p>
-//         <motion.button
-//           className={styles.button}
-//           whileHover={{ scale: 1.05 }}
-//           onClick={scrollToCards}
-//         >
-//           امروز شروع کن
-//         </motion.button>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Hero;
-
-// import styles from "./hero.module.css";
-// import { FC } from "react";
-
-// const Hero: FC = () => {
-//   return (
-//     <section className={styles.hero}>
-//       <h1 className={styles.heroTitle}>صبح و شب با شکرگزاری</h1>
-//       <p className={styles.heroSubtitle}>
-//         هر روز به زیبایی‌های زندگی نگاه کن و شکرگزار باشید.
-//       </p>
-//     </section>
-//   );
-// };
-
-// export default Hero;
 "use client";
 import { FC } from "react";
 import Image from "next/image";
@@ -76,60 +12,94 @@ const Hero: FC = () => {
     }
   };
 
+  const stats = [
+    { number: "1000+", label: "لحظات شکرگزاری" },
+    { number: "365", label: "روز سپاسگزاری" },
+    { number: "∞", label: "نعمت‌های بی‌پایان" },
+  ];
+
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        {/* سمت راست: متن */}
-        <div className={styles.textWrapper}>
+        <motion.div
+          className={styles.textWrapper}
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
           <motion.h1
             className={styles.title}
-            initial={{ opacity: 0, y: -30 }}
+            initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
           >
-            هر روز یه دلیل برای شکرگزاری!🌞
+            هر روز با شکرگزاری، زندگی زیباتر می‌شود ✨
           </motion.h1>
-
           <motion.p
             className={styles.subtitle}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 1 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
           >
-           زندگی پر از لحظه‌های قشنگه، فقط کافیه ببینیشون! بیا با هم هر روز یه چیز کوچیکو پیدا کنیم که ارزش شکرگزاری داره.
+            در این فضای آرامش‌بخش، هر روز یک دلیل جدید برای شکرگزاری پیدا کنید.
+            با ثبت لحظات شکرگزاری، زندگی‌تان را سرشار از مثبت‌اندیشی و قدردانی
+            کنید.
           </motion.p>
+
+          <motion.div
+            className={styles.statsContainer}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+          >
+            {stats.map((stat, index) => (
+              <motion.div
+                key={index}
+                className={styles.statItem}
+                whileHover={{ scale: 1.05 }}
+              >
+                <div className={styles.statNumber}>{stat.number}</div>
+                <div className={styles.statLabel}>{stat.label}</div>
+              </motion.div>
+            ))}
+          </motion.div>
 
           <motion.button
             className={styles.ctaButton}
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.3 }}
             onClick={handleScrollDown}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            امروز شکرگزاری کن
+            شروع شکرگزاری
           </motion.button>
-        </div>
+        </motion.div>
 
-        {/* سمت چپ: تصویر */}
-        <div className={styles.manWrapper}>
-          <div className={styles.circle}></div>
+        <motion.div
+          className={styles.imageWrapper}
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className={styles.decorativeCircle} />
           <Image
-            src="/images/grateful-man.png"
-            alt="مردی در حال شکرگزاری"
-            width={280}
-            height={250}
-            className={styles.manImage}
+            src="/images/gratitude.jpg"
+            alt="تصویر شکرگزاری"
+            fill
+            className={styles.mainImage}
             priority
           />
-        </div>
+        </motion.div>
       </div>
 
-      {/* آیکون اسکرول */}
       <motion.div
-        className={styles.scrollIcon}
+        className={styles.scrollIndicator}
         onClick={handleScrollDown}
-        whileHover={{ scale: 1.2 }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1, duration: 0.8 }}
       >
-        &#8675; {/* پیکان رو به پایین */}
+        <span className={styles.scrollText}>مشاهده موارد شکرگزاری</span>
+        <div className={styles.scrollIcon}>↓</div>
       </motion.div>
     </section>
   );
