@@ -169,6 +169,8 @@
   transition: transform 0.3s ease, background-color 0.3s ease;
   position: relative;
   overflow: hidden;
+  margin-top: 2rem;
+  font-family: "IranSans";
 }
 
 .ctaButton:hover {
@@ -229,9 +231,7 @@
 
 .scrollIndicator {
   position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -241,26 +241,61 @@
   opacity: 0;
   transform: translateY(20px);
   animation: fadeIn 0.8s 1s forwards, slideIn 0.8s 1s forwards;
+  color: #ffffff;
+  font-family: "Iransans";
+  font-size: 1rem;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  left: 0;
+  right: 0;
+  width: 200px;
+  margin: auto;
 }
 
 .scrollIndicator:hover {
-  transform: translate(-50%, -5px);
+  transform: translate(-50%, -10px);
 }
 
 .scrollText {
-  font-size: 0.875rem;
-  color: #6b7280;
+  font-size: 1rem;
+  color: #346fc3e0;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 0.25rem;
 }
 
 .scrollIcon {
-  width: 24px;
-  height: 24px;
-  border: 2px solid #6b7280;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #ffffff;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   animation: bounce 2s infinite;
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.scrollIcon::before {
+  content: "↓";
+  color: #ffffff;
+  font-size: 1.25rem;
+  animation: bounceText 2s infinite;
+}
+
+@keyframes bounceText {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-5px);
+  }
+  60% {
+    transform: translateY(-3px);
+  }
 }
 
 @keyframes bounce {
@@ -318,6 +353,10 @@
 
   .imageWrapper {
     height: 300px;
+  }
+
+  .scrollIndicator {
+    bottom: 1rem;
   }
 }
 

@@ -1,6 +1,5 @@
 "use client";
 import { FC } from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import styles from "./hero.module.css";
 
@@ -97,7 +96,7 @@ const Hero: FC = () => {
         transition={{ delay: 1, duration: 0.8 }}
       >
         <span className={styles.scrollText}>مشاهده موارد شکرگزاری</span>
-        <div className={styles.scrollIcon}>↓</div>
+        <div className={styles.scrollIcon} />
       </motion.div>
     </section>
   );
