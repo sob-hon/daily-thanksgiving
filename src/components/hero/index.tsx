@@ -81,13 +81,11 @@ const Hero: FC = () => {
           transition={{ duration: 0.8 }}
         >
           <div className={styles.decorativeCircle} />
-          <Image
-            src="/images/gratitude.jpg"
-            alt="تصویر شکرگزاری"
-            fill
-            className={styles.mainImage}
-            priority
-          />
+          <div className={styles.trendyDesign}>
+            <div className={styles.gradientCircle}></div>
+            <div className={styles.gradientCircle}></div>
+            <div className={styles.gradientCircle}></div>
+          </div>
         </motion.div>
       </div>
 
