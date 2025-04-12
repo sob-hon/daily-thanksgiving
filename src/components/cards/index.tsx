@@ -200,7 +200,7 @@ const cardData: CardData[] = [
     image: "/images/military-service.jpg",
     alt: "خدمت سربازی",
     text: "شکر برای اینکه خدمت سربازیم به بهترین و راحت‌ترین شکل ممکن به پایان رسید.",
-    category: "دانش",
+    category: "سربازی",
     date: "۱۴۰۴/۰۱/۲۳",
   },
   {
