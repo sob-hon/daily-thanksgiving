@@ -33,7 +33,11 @@ const Card: FC<CardProps> = ({ image, alt, text, category, date }) => {
         <div className={styles.imageContainer}>
           <img src={image} alt={alt} className={styles.image} />
         </div>
-        <p className={styles.text}>{text}</p>
+        {text.split("\n").map((paragraph, idx) => (
+          <span key={idx} className={styles.text}>
+            {paragraph}
+          </span>
+        ))}
       </div>
       <p className={styles.date}>{date}</p>
     </div>
